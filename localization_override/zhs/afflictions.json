@@ -2,7 +2,7 @@
   "BOUND.description": "每回合只能打出[blue]1[/blue]張[gold]魂縛[/gold]卡牌。卡牌會在回合結束時失去[gold]魂縛[/gold]。",
   "BOUND.extraCardText": "魂縛",
   "BOUND.title": "魂縛",
-  "ENTANGLED.description": "{Amount:energyIcons()}費用增加1。",
+  "ENTANGLED.description": "費用額外增加{Amount:energyIcons()}。",
   "ENTANGLED.extraCardText": "纏身",
   "ENTANGLED.title": "纏身",
   "GALVANIZED.description": "打出這張牌時受到[blue]{Amount}[/blue]點傷害。",

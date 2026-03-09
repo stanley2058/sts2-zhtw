@@ -2,7 +2,7 @@
   "ENTRY_ACHIEVEMENTS.bottom": "歷史節點 [blue]{Amount}[/blue]",
   "ENTRY_ACHIEVEMENTS.top": "成就 [blue]{Amount}[/blue]",
   "ENTRY_ANCIENTS.bottom": "結識先古之民 [blue]{Amount}[/blue]",
-  "ENTRY_ANCIENTS.top": "打敗Boss [blue]{Amount}[/blue]",
+  "ENTRY_ANCIENTS.top": "擊敗首領 [blue]{Amount}[/blue]",
   "ENTRY_CARDS.bottom": "已發現 [blue]{Amount}[/blue]",
   "ENTRY_CARDS.top": "已解鎖 [blue]{Amount}[/blue]",
   "ENTRY_CHAR_PLAYTIME.bottom": "最快獲勝 [blue]{FastestWin}[/blue]",

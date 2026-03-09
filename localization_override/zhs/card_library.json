@@ -19,7 +19,7 @@
   "RARITY_RARE_TIP": "篩選[gold]稀有[/gold]牌。",
   "RARITY_UNCOMMON": "罕見",
   "RARITY_UNCOMMON_TIP": "篩選[blue]罕見[/blue]牌。",
-  "SEARCH_PLACEHOLDER": "搜索",
+  "SEARCH_PLACEHOLDER": "搜尋",
   "TYPE_ATTACK_TIP": "篩選[gold]攻擊[/gold]牌。",
   "TYPE_OTHER_TIP": "篩選[gold]狀態[/gold]、[purple]詛咒[/purple]以及[orange]任務[/orange]牌。",
   "TYPE_POWER_TIP": "篩選[gold]能力[/gold]牌。",
@@ -28,6 +28,6 @@
   "UNKNOWN.title": "未知",
   "VICTORIES": "[gold]勝場：[/gold]{Victories}局",
   "VIEW_MULTIPLAYER_CARDS": "多人模式卡牌",
-  "VIEW_STATS": "查看數據",
-  "VIEW_UPGRADES": "查看升級"
+  "VIEW_STATS": "檢視資料",
+  "VIEW_UPGRADES": "檢視升級"
 }
