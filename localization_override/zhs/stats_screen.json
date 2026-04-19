@@ -2,7 +2,7 @@
   "ENTRY_ACHIEVEMENTS.bottom": "歷史節點 [blue]{Amount}[/blue]",
   "ENTRY_ACHIEVEMENTS.top": "成就 [blue]{Amount}[/blue]",
   "ENTRY_ANCIENTS.bottom": "結識先古之民 [blue]{Amount}[/blue]",
-  "ENTRY_ANCIENTS.top": "擊敗首領 [blue]{Amount}[/blue]",
+  "ENTRY_ANCIENTS.top": "打敗首領 [blue]{Amount}[/blue]",
   "ENTRY_CARDS.bottom": "已發現 [blue]{Amount}[/blue]",
   "ENTRY_CARDS.top": "已解鎖 [blue]{Amount}[/blue]",
   "ENTRY_CHAR_PLAYTIME.bottom": "最快獲勝 [blue]{FastestWin}[/blue]",
@@ -28,7 +28,7 @@
   "RATIO_FORMAT": "{Numerator}/{Denominator}",
   "TAB_ACHIEVEMENT.header": "成就",
   "TAB_STATS.header": "統計",
-  "TIP_PLAYTIME.description": "你的遊玩時長和你的最高連勝。",
+  "TIP_PLAYTIME.description": "你的遊玩時長和你的最速獲勝。",
   "TIP_PLAYTIME.header": "遊玩時間",
   "TIP_WIN_LOSS.description": "所有角色完成的總進階層數。",
   "TIP_WIN_LOSS.header": "進階"

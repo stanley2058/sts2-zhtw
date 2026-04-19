@@ -6,7 +6,7 @@
   "ACTION_NAME.hurt": "受傷",
   "ACTION_NAME.revive": "復活",
   "ACTION_NAME.stun": "擊暈",
-  "DESCRIPTION.placeholder": "這個怪物的資訊還沒有揭曉……",
+  "DESCRIPTION.placeholder": "這個怪物的訊息還沒有揭曉……",
   "LOCKED.monsterName": "鎖定",
   "LOCKED.monsterTitle": "鎖定"
 }
