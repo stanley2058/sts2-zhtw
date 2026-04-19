@@ -36,6 +36,7 @@ const normalizationRules = [
   [/嗷/g, '喔'],
   [/髮送/g, '發送'],
   [/觀衆/g, '觀眾'],
+  [/回覆/g, '回復'],
 ];
 
 const carryForwardOverrides = {
@@ -173,6 +174,11 @@ const carryForwardOverrides = {
   ],
   'rich_presence.json': [
     'LOADING_MP_LOBBY',
+    'MAIN_MENU',
+    'STANDARD_MP_LOBBY',
+  ],
+  'rest_site_ui.json': [
+    'OPTION_CLONE.name',
   ],
   'settings_ui.json': [
     'DISCONNECT_CONFIRMATION.body',
@@ -220,6 +226,15 @@ const carryForwardOverrides = {
   ],
   'credits.json': [
     'EXIT_MESSAGE',
+  ],
+};
+
+const omittedOverrideKeys = {
+  'rich_presence.json': [
+    // The built-in rich presence IN_RUN format uses a non-SmartFormat token style
+    // that the override validator rejects on startup. Let the game fall back to
+    // the built-in zhs key instead of overriding it.
+    'IN_RUN',
   ],
 };
 
@@ -305,9 +320,13 @@ function normalizeText(text) {
 function extractTemplateTokens(text) {
   const placeholders = text.match(/\{[^{}]+\}/g) ?? [];
   const bbcode = text.match(/\[(?:\/)?[a-z_]+(?:=[^\]]+)?\]/gi) ?? [];
+  const percentTokens = text.match(/%[^%]+%/g) ?? [];
+  const hashTokens = text.match(/#%[^%]+%_[A-Za-z0-9]+/g) ?? [];
   return {
     placeholders,
     bbcode,
+    percentTokens,
+    hashTokens,
     newlineCount: (text.match(/\n/g) ?? []).length,
   };
 }
@@ -321,7 +340,8 @@ function compareArrays(a, b) {
 }
 
 function validateJsonTemplates(sourceJson, outputJson, fileName) {
-  const sourceKeys = Object.keys(sourceJson);
+  const omittedKeys = new Set(omittedOverrideKeys[fileName] ?? []);
+  const sourceKeys = Object.keys(sourceJson).filter((key) => !omittedKeys.has(key));
   const outputKeys = Object.keys(outputJson);
 
   if (!compareArrays(sourceKeys, outputKeys)) {
@@ -348,6 +368,14 @@ function validateJsonTemplates(sourceJson, outputJson, fileName) {
 
     if (!compareArrays(sourceTokens.bbcode, outputTokens.bbcode)) {
       fail(`${fileName}:${key} BBCode mismatch`);
+    }
+
+    if (!compareArrays(sourceTokens.percentTokens, outputTokens.percentTokens)) {
+      fail(`${fileName}:${key} percent token mismatch`);
+    }
+
+    if (!compareArrays(sourceTokens.hashTokens, outputTokens.hashTokens)) {
+      fail(`${fileName}:${key} hash token mismatch`);
     }
 
     if (sourceTokens.newlineCount !== outputTokens.newlineCount) {
@@ -411,6 +439,9 @@ for (const fileName of extractedJsonFiles) {
 
   const outputJson = {};
   for (const [key, value] of Object.entries(openccJson)) {
+    if ((omittedOverrideKeys[fileName] ?? []).includes(key)) {
+      continue;
+    }
     outputJson[key] = typeof value === 'string' ? normalizeText(value) : value;
   }
 

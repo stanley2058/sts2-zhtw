@@ -36,7 +36,7 @@
   "MAP_POINT_HISTORY.falseVictory.0": "{character}成功到達了塔頂？",
   "MAP_POINT_HISTORY.falseVictory.1": "{character}已經盡了全力，但依然不夠……",
   "MAP_POINT_HISTORY.header": "第{FloorNum}層",
-  "MAP_POINT_HISTORY.healed": "[green]回覆了{HP}點生命[/green]",
+  "MAP_POINT_HISTORY.healed": "[green]回復了{HP}點生命[/green]",
   "MAP_POINT_HISTORY.maxHpGained": "[green]獲得了{HP}最大生命[/green]",
   "MAP_POINT_HISTORY.maxHpLost": "[red]失去了{HP}最大生命[/red]",
   "MAP_POINT_HISTORY.player_stats": "[red]{HP}/{MaxHP}生命[/red]    [gold]{Gold}金幣[/gold]",
